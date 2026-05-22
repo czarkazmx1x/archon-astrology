@@ -1,0 +1,549 @@
+---
+---
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>Archon Astrology | Secure the Archive</title>
+<script src="/assets/03ba5d9f9e95fc3599acebcbe7e5fb9a.js" is:inline="" />
+<link href="/assets/f9be0e5a58fa8fd06e6379901a0470a5.css" rel="stylesheet" />
+<link href="/assets/a39f5c6fcbb87b419667ec984d2e579a.css" rel="stylesheet" />
+<link href="/assets/a39f5c6fcbb87b419667ec984d2e579a.css" rel="stylesheet" />
+<style>
+        body {
+            background-color: #020305;
+            color: #e3e3de;
+            overflow-x: hidden;
+        }
+
+        .nebula-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(26, 11, 46, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(56, 41, 77, 0.3) 0%, transparent 50%);
+        }
+
+        .star-field {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .antique-gold-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+        }
+
+        .sigil-pulse {
+            animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); filter: drop-shadow(0 0 5px #f2ca50); }
+            50% { opacity: 1; transform: scale(1.05); filter: drop-shadow(0 0 15px #f2ca50); }
+        }
+
+        .zodiac-rotation {
+            animation: rotate 120s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .glass-card {
+            background: rgba(26, 11, 46, 0.4);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .occult-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d4af37 50%, transparent);
+            position: relative;
+            margin: 48px 0;
+        }
+
+        .occult-divider::after {
+            content: '◆';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #d4af37;
+            font-size: 10px;
+            background: #020305;
+            padding: 0 8px;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#191c1f",
+                    "on-tertiary": "#2e3134",
+                    "primary-fixed": "#ffe088",
+                    "inverse-on-surface": "#2f312e",
+                    "on-primary-fixed": "#241a00",
+                    "on-error": "#690005",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed": "#231437",
+                    "surface-dim": "#121411",
+                    "on-tertiary-fixed-variant": "#44474b",
+                    "surface": "#121411",
+                    "background": "#121411",
+                    "surface-container-highest": "#333532",
+                    "on-primary": "#3c2f00",
+                    "on-primary-container": "#554300",
+                    "secondary-container": "#524267",
+                    "on-surface": "#e3e3de",
+                    "tertiary-fixed-dim": "#c5c6cb",
+                    "on-secondary-fixed-variant": "#4f4065",
+                    "outline": "#99907c",
+                    "on-tertiary-container": "#434549",
+                    "on-secondary-container": "#c4b0dd",
+                    "surface-container": "#1e201d",
+                    "tertiary-fixed": "#e1e2e7",
+                    "on-primary-fixed-variant": "#574500",
+                    "surface-container-lowest": "#0d0f0c",
+                    "primary-container": "#d4af37",
+                    "surface-container-low": "#1a1c19",
+                    "tertiary-fixed": "#e1e2e7",
+                    "on-primary-fixed-variant": "#574500",
+                    "surface-container-lowest": "#0d0f0c",
+                    "primary-container": "#d4af37",
+                    "surface-container-low": "#1a1c19",
+                    "tertiary-container": "#b1b3b8",
+                    "surface-variant": "#333532",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#292a27",
+                    "surface-tint": "#e9c349",
+                    "on-secondary": "#38294d",
+                    "secondary-fixed-dim": "#d3beeb",
+                    "tertiary": "#cdced3",
+                    "secondary": "#d3beeb",
+                    "on-background": "#e3e3de",
+                    "error": "#ffb4ab",
+                    "secondary-fixed": "#eddcff",
+                    "on-surface-variant": "#d0c5af",
+                    "inverse-surface": "#e3e3de",
+                    "primary-fixed-dim": "#e9c349",
+                    "inverse-primary": "#735c00",
+                    "primary": "#f2ca50",
+                    "outline-variant": "#4d4635",
+                    "surface-bright": "#383a36"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Hanken Grotesk"],
+                    "sigil-sm": ["JetBrains Mono"],
+                    "headline-md": ["Playfair Display"],
+                    "display-xl": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "sigil-sm": ["14px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="dark selection:bg-primary/30">
+<div class="nebula-bg" />
+<canvas class="star-field" id="starCanvas" />
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto bg-surface/80 dark:bg-surface/80 backdrop-blur-lg border-b border-outline-variant/10 shadow-[0_0_15px_rgba(212,175,55,0.15)]">
+<div class="text-headline-md font-headline-md font-semibold text-primary dark:text-primary">Archon Astrology</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">The Archive</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">The Archons</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Readings</a>
+<a class="text-label-caps font-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Sacred Geometry</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-primary" data-icon="search">search</button>
+<button class="bg-primary text-on-primary-fixed px-6 py-2 text-label-caps font-label-caps hover:bg-primary-fixed-dim transition-all active:scale-95">Seek the Pattern</button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-height-[921px] flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop py-24 overflow-hidden">
+<div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-20">
+<div class="zodiac-rotation border-[1px] border-primary/20 rounded-full w-[800px] h-[800px] flex items-center justify-center">
+<img alt="Antique Gold Zodiac" class="w-full h-full object-contain mix-blend-screen grayscale opacity-50" data-alt="A highly detailed and ornate antique gold zodiac wheel rendered in 3D. The wheel features intricate celestial engravings, esoteric sigils, and miniature astronomical symbols along its rim. It rotates slowly in a vast, dark cosmic void filled with drifting violet nebulae and distant shimmering stars. The lighting is focused on the central hub where a brilliant golden light emanates, illuminating the textured metallic surface of the wheel." src="/assets/5f3a34352107e787cc6f8b7efe8784f5.png" />
+</div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<h1 class="font-display-xl text-display-xl text-primary mb-6 drop-shadow-lg">Archon Astrology</h1>
+<p class="font-body-lg text-body-lg text-on-surface max-w-2xl mx-auto mb-10 opacity-90 leading-relaxed">
+                    Astrology reveals your pattern. <span class="text-primary italic">Archon Astrology reveals what is feeding on it.</span>
+</p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary text-on-primary-fixed px-8 py-4 text-label-caps font-label-caps text-lg hover:shadow-[0_0_20px_rgba(242,202,80,0.4)] transition-all">Read Today’s Archon Reading</button>
+<button class="border border-primary/40 text-primary px-8 py-4 text-label-caps font-label-caps text-lg hover:bg-primary/5 transition-all">Learn the System</button>
+</div>
+<div class="mt-12 sigil-pulse">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="star_outline">star_outline</span>
+</div>
+</div>
+</section>
+<!-- Today's Reading Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24">
+<div class="occult-divider mb-16" />
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<div class="lg:col-span-5">
+<div class="glass-card p-12 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-6xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-primary mb-2">MAY 21, 2026</h3>
+<h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">The Archon of False Light</h2>
+<div class="space-y-8">
+<div>
+<h4 class="font-label-caps text-label-caps text-primary/70 mb-2 uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="dangerous">dangerous</span> Trap
+                                </h4>
+<p class="font-body-md text-body-md">Seeking validation through superficial intellectual superiority or "spiritual signaling" that masks an underlying fear of insignificance.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary/70 mb-2 uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="key">key</span> Liberation
+                                </h4>
+<p class="font-body-md text-body-md">Silence the inner narrator. Authentic wisdom does not require an audience; it burns steadily in the dark without witness.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary/70 mb-2 uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="warning">warning</span> Warning
+                                </h4>
+<p class="font-body-md text-body-md">Beware the "Golden Mirror"—a tendency today to see only what you wish to see in the reflections of others.</p>
+</div>
+<div class="pt-6 border-t border-primary/10">
+<p class="font-sigil-sm text-sigil-sm italic text-primary">"I am the light that survives the death of the star."</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 flex flex-col justify-center h-full">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">What Is Archon Astrology?</h2>
+<div class="space-y-6 text-on-surface-variant font-body-lg">
+<p>Most astrology tells you who you are. Archon Astrology tells you what is attempting to define you. It is a modern mythic system grounded in gnostic exploration and deep-shadow work.</p>
+<p>Each celestial body is governed by an Archon—a symbolic "warden" of consciousness. By identifying your Archon, you identify the specific narrative parasite that feeds on your potential. This is not about prediction; it is about preservation of the soul's sovereign will.</p>
+</div>
+<div class="mt-10 grid grid-cols-2 gap-4">
+<div class="glass-card p-6 border-none bg-surface-container-low">
+<span class="font-display-xl text-primary/20 block mb-2">01</span>
+<h4 class="font-label-caps text-primary mb-2">DECODE</h4>
+<p class="font-body-md text-sm">Identify the primary Archon influencing your current cycle.</p>
+</div>
+<div class="glass-card p-6 border-none bg-surface-container-low">
+<span class="font-display-xl text-primary/20 block mb-2">02</span>
+<h4 class="font-label-caps text-primary mb-2">NEUTRALIZE</h4>
+<p class="font-body-md text-sm">Use the daily Liberation keys to break the feeding cycle.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Three-Part System -->
+<section class="bg-surface-container-lowest py-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">The Triad of Surveillance</h2>
+<p class="font-body-lg text-on-surface-variant">The system functions through three distinct vibrational states.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- The Trap -->
+<div class="glass-card p-10 flex flex-col items-center text-center group">
+<div class="w-16 h-16 border border-primary/30 flex items-center justify-center mb-8 rotate-45 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl -rotate-45" data-icon="lock">lock</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">The Trap</h3>
+<p class="font-body-md text-on-surface-variant">The repetitive psychological loops and external triggers where energy is siphoned into the mundane matrix.</p>
+</div>
+<!-- The Liberation -->
+<div class="glass-card p-10 flex flex-col items-center text-center group border-primary/40">
+<div class="w-16 h-16 border border-primary/60 flex items-center justify-center mb-8 rotate-45 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl -rotate-45" data-icon="key">key</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">The Liberation</h3>
+<p class="font-body-md text-on-surface-variant">Active defiance through conscious ritual and the interruption of automatic behaviors to regain soul sovereignty.</p>
+</div>
+<!-- The Warning -->
+<div class="glass-card p-10 flex flex-col items-center text-center group">
+<div class="w-16 h-16 border border-primary/30 flex items-center justify-center mb-8 rotate-45 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl -rotate-45" data-icon="visibility">visibility</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">The Warning</h3>
+<p class="font-body-md text-on-surface-variant">The early indicators of Archon infiltration. Learning to spot the 'Glitch' before the cycle begins anew.</p>
+</div>
+</div>
+<div class="mt-12 text-center">
+<div class="inline-block px-6 py-3 border border-primary/20 bg-primary/5 rounded-full">
+<span class="font-label-caps text-primary flex items-center gap-3">
+<span class="material-symbols-outlined text-sm" data-icon="record_voice_over">record_voice_over</span>
+                            Current Mantra: "I see the strings, therefore I am free to cut them."
+                        </span>
+</div>
+</div>
+</div>
+</section>
+<!-- The Twelve Archons Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">The Twelve Wardens</h2>
+<p class="font-body-lg text-on-surface-variant">Click an Archon to view their specific Archive data.</p>
+</div>
+<div class="font-label-caps text-label-caps text-primary/50 flex gap-4">
+<span>ZODIAC</span>
+<span>/</span>
+<span>ARCHON</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<!-- Aries -->
+<div class="glass-card p-8 group cursor-pointer hover:bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-xs text-primary/60">ARIES</span>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<h4 class="font-headline-md text-xl mb-2">Archon of Rage</h4>
+<p class="font-body-md text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">The Fire that consumes its own vessel.</p>
+</div>
+<!-- Taurus -->
+<div class="glass-card p-8 group cursor-pointer hover:bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-xs text-primary/60">TAURUS</span>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" data-icon="token">token</span>
+</div>
+<h4 class="font-headline-md text-xl mb-2">Archon of Stagnation</h4>
+<p class="font-body-md text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">The Earth that buries the spirit.</p>
+</div>
+<!-- Gemini -->
+<div class="glass-card p-8 group cursor-pointer hover:bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-xs text-primary/60">GEMINI</span>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" data-icon="forum">forum</span>
+</div>
+<h4 class="font-headline-md text-xl mb-2">Archon of Duality</h4>
+<p class="font-body-md text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">The Voice that splits the mind.</p>
+</div>
+<!-- Cancer -->
+<div class="glass-card p-8 group cursor-pointer hover:bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-xs text-primary/60">CANCER</span>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" data-icon="water_drop">water_drop</span>
+</div>
+<h4 class="font-headline-md text-xl mb-2">Archon of Memory</h4>
+<p class="font-body-md text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">The Ocean that drowns the present.</p>
+</div>
+<!-- Leo -->
+<div class="glass-card p-8 group cursor-pointer hover:bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-xs text-primary/60">LEO</span>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" data-icon="flare">flare</span>
+</div>
+<h4 class="font-headline-md text-xl mb-2">Archon of Ego</h4>
+<p class="font-body-md text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">The Sun that blinds the seer.</p>
+</div>
+<!-- Virgo -->
+<div class="glass-card p-8 group cursor-pointer hover:bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-xs text-primary/60">VIRGO</span>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" data-icon="grid_4x4">grid_4x4</span>
+</div>
+<h4 class="font-headline-md text-xl mb-2">Archon of Order</h4>
+<p class="font-body-md text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">The Pattern that imprisons the wild.</p>
+</div>
+<!-- Libra -->
+<div class="glass-card p-8 group cursor-pointer hover:bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-xs text-primary/60">LIBRA</span>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" data-icon="balance">balance</span>
+</div>
+<h4 class="font-headline-md text-xl mb-2">Archon of Indecision</h4>
+<p class="font-body-md text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">The Scales that never settle.</p>
+</div>
+<!-- Scorpio -->
+<div class="glass-card p-8 group cursor-pointer hover:bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-xs text-primary/60">SCORPIO</span>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" data-icon="skull">skull</span>
+</div>
+<h4 class="font-headline-md text-xl mb-2">Archon of Obsession</h4>
+<p class="font-body-md text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">The Depth that never reaches bottom.</p>
+</div>
+<!-- Sagittarius -->
+<div class="glass-card p-8 group cursor-pointer hover:bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-xs text-primary/60">SAGITTARIUS</span>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" data-icon="navigation">navigation</span>
+</div>
+<h4 class="font-headline-md text-xl mb-2">Archon of Fanaticism</h4>
+<p class="font-body-md text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">The Arrow that misses the self.</p>
+</div>
+<!-- Capricorn -->
+<div class="glass-card p-8 group cursor-pointer hover:bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-xs text-primary/60">CAPRICORN</span>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" data-icon="corporate_fare">corporate_fare</span>
+</div>
+<h4 class="font-headline-md text-xl mb-2">Archon of Structure</h4>
+<p class="font-body-md text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">The Mountain that limits the sky.</p>
+</div>
+<!-- Aquarius -->
+<div class="glass-card p-8 group cursor-pointer hover:bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-xs text-primary/60">AQUARIUS</span>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" data-icon="hub">hub</span>
+</div>
+<h4 class="font-headline-md text-xl mb-2">Archon of Detachment</h4>
+<p class="font-body-md text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">The Stars that forget the earth.</p>
+</div>
+<!-- Pisces -->
+<div class="glass-card p-8 group cursor-pointer hover:bg-primary/5 transition-all">
+<div class="flex justify-between items-start mb-6">
+<span class="font-label-caps text-xs text-primary/60">PISCES</span>
+<span class="material-symbols-outlined text-primary opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all" data-icon="waves">waves</span>
+</div>
+<h4 class="font-headline-md text-xl mb-2">Archon of Illusion</h4>
+<p class="font-body-md text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">The Dream that devours the dreamer.</p>
+</div>
+</div>
+</section>
+<!-- Email Signup -->
+<section class="max-w-4xl mx-auto px-margin-mobile py-32 text-center">
+<div class="glass-card p-16 border-primary/20 bg-primary/5">
+<h2 class="font-headline-lg text-headline-lg mb-4 text-primary">Receive the Daily Archon Reading</h2>
+<p class="font-body-lg text-on-surface-variant mb-10">We do not spam. We only notify you when the wardens are active.</p>
+<form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+<input class="flex-1 bg-transparent border-0 border-b border-primary/40 focus:ring-0 focus:border-primary text-primary font-label-caps placeholder:text-primary/30 py-4 px-2" placeholder="ENTER YOUR COORDINATES" type="email" />
+<button class="bg-primary text-on-primary-fixed px-10 py-4 text-label-caps font-label-caps hover:bg-primary-fixed-dim transition-all">Join the Archive</button>
+</form>
+<div class="mt-8 flex justify-center gap-6 opacity-30">
+<span class="material-symbols-outlined" data-icon="lock_open">lock_open</span>
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+<span class="material-symbols-outlined" data-icon="policy">policy</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-desktop flex flex-col items-center gap-unit bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="text-headline-md font-headline-md text-primary mb-6">ARCHON ASTROLOGY</div>
+<div class="flex gap-8 mb-8">
+<a class="text-label-caps font-label-caps text-on-tertiary-fixed-variant hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-label-caps font-label-caps text-on-tertiary-fixed-variant hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-label-caps font-label-caps text-on-tertiary-fixed-variant hover:text-primary transition-colors" href="#">Esoteric Guidelines</a>
+</div>
+<div class="font-label-caps text-on-tertiary-fixed-variant text-[10px] tracking-[0.2em]">
+            © ARCHON ASTROLOGY. SECURE THE ARCHIVE.
+        </div>
+</footer>
+<script>
+        // Simple starfield animation
+        const canvas = document.getElementById('starCanvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initStars();
+        }
+
+        function initStars() {
+            stars = [];
+            for(let i = 0; i < 200; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 1.5,
+                    speed: Math.random() * 0.2 + 0.1,
+                    opacity: Math.random()
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(star => {
+                ctx.fillStyle = `rgba(212, 175, 55, ${star.opacity})`;
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                star.y -= star.speed;
+                if(star.y < 0) star.y = canvas.height;
+                
+                star.opacity += (Math.random() - 0.5) * 0.05;
+                if(star.opacity < 0.1) star.opacity = 0.1;
+                if(star.opacity > 0.8) star.opacity = 0.8;
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
+
+        // Reveal effect on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

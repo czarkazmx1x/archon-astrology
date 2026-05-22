@@ -1,0 +1,495 @@
+---
+---
+
+<html class="scroll-smooth" lang="en"><head /><body class="bg-background text-on-surface font-body-md overflow-x-hidden">```html
+
+
+
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>Archon Astrology | Destiny Awaits</title>
+<script src="/assets/03ba5d9f9e95fc3599acebcbe7e5fb9a.js" is:inline="" />
+<link href="/assets/f300e547f0f59c209d47dba00181bba4.css" rel="stylesheet" />
+<link href="/assets/a39f5c6fcbb87b419667ec984d2e579a.css" rel="stylesheet" />
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .celestial-rotate {
+            animation: rotate 120s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 20px rgba(33, 33, 33, 0.08);
+        }
+        .tarot-fan-container {
+            perspective: 1000px;
+        }
+        .tarot-card {
+            transition: transform 0.4s ease, z-index 0s;
+        }
+        .tarot-card:hover {
+            transform: translateY(-20px) rotate(0deg) scale(1.1) !important;
+            z-index: 50;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#21221b",
+                        "on-secondary-container": "#6f6345",
+                        "primary-fixed": "#e5e2e1",
+                        "secondary-fixed": "#f2e1bb",
+                        "background": "#fcfaee",
+                        "primary-container": "#212121",
+                        "on-primary-fixed": "#1b1c1c",
+                        "on-surface-variant": "#444748",
+                        "surface-container-highest": "#e5e3d7",
+                        "on-primary-container": "#898888",
+                        "surface-dim": "#dcdacf",
+                        "surface-container-high": "#eae8dd",
+                        "on-surface": "#1b1c15",
+                        "charcoal-text": "#212121",
+                        "inverse-on-surface": "#f3f1e5",
+                        "surface-container-low": "#f6f4e8",
+                        "secondary": "#695d40",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed": "#e4e3d7",
+                        "primary": "#0a0a0a",
+                        "on-tertiary-container": "#89897f",
+                        "surface-variant": "#e5e3d7",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fcfaee",
+                        "outline": "#747878",
+                        "paper-shadow": "#E6E3D1",
+                        "on-secondary-fixed-variant": "#50462a",
+                        "tertiary": "#0a0b05",
+                        "on-tertiary-fixed": "#1b1c15",
+                        "surface-bright": "#fcfaee",
+                        "surface-container": "#f0eee2",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "ivory-base": "#FDFCF0",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#231b04",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "muted-gold": "#8B7E5E",
+                        "error-container": "#ffdad6",
+                        "on-background": "#1b1c15",
+                        "tertiary-fixed-dim": "#c7c7bc",
+                        "inverse-primary": "#c8c6c5",
+                        "inverse-surface": "#303129",
+                        "on-tertiary-fixed-variant": "#46473f",
+                        "on-primary-fixed-variant": "#474746",
+                        "surface-tint": "#5f5e5e",
+                        "outline-variant": "#c4c7c7",
+                        "secondary-fixed-dim": "#d5c5a1",
+                        "secondary-container": "#f2e1bb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "section-gap": "80px",
+                        "gutter": "24px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Manrope"],
+                        "meta-sm": ["Manrope"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "meta-sm": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-on-surface/10 flex justify-between items-center px-gutter h-20 max-w-container-max mx-auto">
+<div class="flex items-center gap-12">
+<a class="font-headline-md text-headline-md text-charcoal-text tracking-tight" href="/">Archon Astrology</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-muted-gold border-b border-muted-gold pb-1 font-bold font-label-caps text-label-caps" href="#">Zodiac</a>
+<a class="text-charcoal-text/80 font-label-caps text-label-caps hover:text-muted-gold transition-colors duration-300" href="#">Numerology</a>
+<a class="text-charcoal-text/80 font-label-caps text-label-caps hover:text-muted-gold transition-colors duration-300" href="#">Tarot</a>
+<a class="text-charcoal-text/80 font-label-caps text-label-caps hover:text-muted-gold transition-colors duration-300" href="#">Angel Numbers</a>
+<a class="text-charcoal-text/80 font-label-caps text-label-caps hover:text-muted-gold transition-colors duration-300" href="#">Chinese Zodiac</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center border border-on-surface/10 px-4 py-2 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-on-surface-variant text-body-md mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-meta-sm font-meta-sm w-32 placeholder:text-on-surface-variant/50" placeholder="Search the stars..." type="text" />
+</div>
+<button class="bg-primary-container text-white px-6 py-2.5 rounded-lg font-label-caps text-label-caps hover:bg-charcoal-text transition-all scale-95 duration-200">Get Reading</button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col items-center justify-center px-margin-mobile md:px-gutter py-section-gap overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none flex items-center justify-center">
+<div class="w-[800px] h-[800px] border border-muted-gold rounded-full celestial-rotate flex items-center justify-center">
+<div class="w-[600px] h-[600px] border border-muted-gold/50 rounded-full flex items-center justify-center">
+<div class="w-[400px] h-[400px] border border-muted-gold/30 rounded-full" />
+</div>
+</div>
+</div>
+<div class="z-10 text-center max-w-3xl mb-12">
+<p class="font-label-caps text-label-caps text-muted-gold mb-4">ASTROLOGY &amp; NUMEROLOGY</p>
+<h1 class="font-display-lg text-display-lg mb-8">Destiny awaits...</h1>
+</div>
+<div class="z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-container-max w-full">
+<div class="bg-surface-container-low p-8 md:p-12 border border-on-surface/10 rounded-xl">
+<h2 class="font-headline-md text-headline-md mb-8">Find your zodiac sign</h2>
+<div class="space-y-6">
+<div>
+<label class="font-label-caps text-label-caps block mb-2 opacity-60">MONTH</label>
+<select class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded focus:border-muted-gold focus:ring-0 appearance-none">
+<option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="font-label-caps text-label-caps block mb-2 opacity-60">DAY</label>
+<select class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded focus:border-muted-gold focus:ring-0 appearance-none">
+<option>1</option><option>2</option><option>3</option>
+</select>
+</div>
+<div>
+<label class="font-label-caps text-label-caps block mb-2 opacity-60">YEAR</label>
+<select class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded focus:border-muted-gold focus:ring-0 appearance-none">
+<option>2024</option><option>1995</option><option>1988</option>
+</select>
+</div>
+</div>
+<button class="w-full bg-primary-container text-white py-4 font-label-caps text-label-caps tracking-widest hover:bg-charcoal-text transition-all mt-4">REVEAL MY SIGN</button>
+</div>
+</div>
+<div class="flex justify-center items-center">
+<div class="relative group">
+<div class="absolute inset-0 bg-muted-gold/10 blur-3xl group-hover:bg-muted-gold/20 transition-all" />
+<img alt="Celestial Zodiac Wheel" class="relative z-10 w-full max-w-md celestial-rotate duration-[300s]" data-alt="A detailed gold-line art illustration of a celestial zodiac wheel featuring intricate mystical symbols and constellations. The design is presented on a clean, light-ivory background with a sophisticated, editorial aesthetic. Soft, ethereal lighting highlights the fine textures of the golden ink, creating a mood of ancient wisdom and modern luxury." src="/assets/73a77083223c8a7fe8c968bd3b7214e8.png" />
+<div class="absolute inset-0 z-20 flex items-center justify-center">
+<span class="font-display-lg text-display-lg text-muted-gold">?</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Latest -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<h2 class="font-headline-lg text-headline-lg mb-12">The Latest</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<article class="card-hover-effect transition-all border border-on-surface/5 p-4 rounded-lg bg-surface-container-lowest">
+<img alt="Blog post 1" class="w-full aspect-[4/3] object-cover mb-6 rounded-sm" data-alt="A sophisticated editorial photograph of a vintage astrological observatory at night. High-contrast lighting highlights brass celestial spheres and antique star charts spread across a dark mahogany table. The scene is imbued with a moody, scholarly atmosphere, featuring rich charcoals and muted gold highlights that match a premium mystical brand identity." src="/assets/29c2aee05e278f44c25d42166f0d0c58.png" />
+<span class="font-label-caps text-[10px] text-muted-gold uppercase">Blog</span>
+<h3 class="font-headline-md text-[22px] leading-tight mt-2 mb-4">Astrology House Systems: A Guide to Choosing the Best One for You</h3>
+<p class="font-meta-sm text-meta-sm text-on-surface-variant">By Ersa Fay</p>
+</article>
+<article class="card-hover-effect transition-all border border-on-surface/5 p-4 rounded-lg bg-surface-container-lowest">
+<img alt="Blog post 2" class="w-full aspect-[4/3] object-cover mb-6 rounded-sm" data-alt="A minimalist overhead shot of several elegant astrology books with monochromatic covers, arranged artistically on a light linen surface. A small bundle of dried lavender and a single piece of clear quartz crystal are placed nearby. The lighting is soft and natural, emphasizing a serene, intellectual, and high-end lifestyle aesthetic." src="/assets/e2b3807e701a8a5b7a44d482156d89dd.png" />
+<span class="font-label-caps text-[10px] text-muted-gold uppercase">Blog</span>
+<h3 class="font-headline-md text-[22px] leading-tight mt-2 mb-4">Beginning Astrology: The 7 Best Books for Learning the Basics</h3>
+<p class="font-meta-sm text-meta-sm text-on-surface-variant">By Ersa Fay</p>
+</article>
+<article class="card-hover-effect transition-all border border-on-surface/5 p-4 rounded-lg bg-surface-container-lowest">
+<img alt="Blog post 3" class="w-full aspect-[4/3] object-cover mb-6 rounded-sm" data-alt="A stunning artistic representation of the Libra scales, rendered in a modern sculptural style with ethereal, glowing particles. The background is a deep, velvety charcoal, contrasting with the luminous white and soft gold of the scales. The composition is balanced and elegant, reflecting the intellectual and harmonious nature of the zodiac sign." src="/assets/861026bce1671ebd16a241d522307535.png" />
+<span class="font-label-caps text-[10px] text-muted-gold uppercase">Zodiac Signs</span>
+<h3 class="font-headline-md text-[22px] leading-tight mt-2 mb-4">Libra Zodiac Sign: Dates, Personality and Compatibility</h3>
+<p class="font-meta-sm text-meta-sm text-on-surface-variant">By Ersa Fay</p>
+</article>
+</div>
+</section>
+<!-- Popular Topics Bento -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16">
+<p class="font-label-caps text-label-caps text-muted-gold mb-2">LEARN SOMETHING NEW</p>
+<h2 class="font-headline-lg text-headline-lg">Popular Topics</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 min-h-[700px]">
+<!-- Large Central Card -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-lowest border border-on-surface/10 p-10 flex flex-col justify-end group cursor-pointer overflow-hidden">
+<div class="relative w-full h-full mb-8">
+<img alt="Sun Moon Rising" class="w-full h-full object-contain transform transition-transform group-hover:scale-110" data-alt="An artistic digital composition showcasing three abstract celestial bodies representing the Sun, Moon, and Ascendant. The sun is a glowing ember, the moon a textured silver orb, and the rising sign indicated by a sharp golden horizon line. All elements are set against a deep cosmic charcoal background with delicate star dust patterns and gold-foil geometric overlays." src="/assets/72a5ff1d06ab2897a1b23ee31bdfd016.png" />
+</div>
+<span class="font-label-caps text-label-caps text-muted-gold uppercase">Astrology</span>
+<h3 class="font-headline-lg text-[32px] mt-4 group-hover:text-muted-gold transition-colors">Sun, Moon and Rising Signs: Calculate Yours (+ Their Meanings)</h3>
+</div>
+<!-- Gemini Card -->
+<div class="md:col-span-1 bg-surface-container-lowest border border-on-surface/10 p-6 flex flex-col group cursor-pointer">
+<img alt="Gemini" class="w-full aspect-square object-cover mb-4 grayscale hover:grayscale-0 transition-all" data-alt="A modern minimalist illustration of the Gemini twins symbol, created with two intersecting profiles in fine gold linework. The aesthetic is clean and editorial, using a sophisticated off-white and charcoal palette. Soft atmospheric lighting gives the artwork a premium, ethereal quality suitable for a high-end astrology platform." src="/assets/d0afbcf4e69b99bdfb9af6f18b031e98.png" />
+<span class="font-label-caps text-label-caps text-muted-gold text-[10px]">Zodiac Signs</span>
+<h4 class="font-headline-md text-body-lg mt-2">Gemini Zodiac Sign: Dates, Personality and Compatibility</h4>
+</div>
+<!-- Numerology Card -->
+<div class="md:col-span-1 bg-surface-container-lowest border border-on-surface/10 p-6 flex flex-col group cursor-pointer">
+<img alt="Numerology" class="w-full aspect-square object-cover mb-4" data-alt="A stylized graphic showing glowing golden numbers 11, 22, and 33 floating within a complex geometric matrix of fine lines. The background is a rich, matte black that makes the gold elements pop. The design feels intellectual and esoteric, capturing the high-energy vibration associated with master numbers in numerology." src="/assets/8b8f4094c61ae81246262e2014669672.png" />
+<span class="font-label-caps text-label-caps text-muted-gold text-[10px]">Numerology</span>
+<h4 class="font-headline-md text-body-lg mt-2">Name Numerology Calculator (and What it Means)</h4>
+</div>
+<!-- Life Path Card -->
+<div class="md:col-span-1 bg-surface-container-lowest border border-on-surface/10 p-6 flex flex-col group cursor-pointer">
+<img alt="Life Path" class="w-full aspect-square object-cover mb-4" data-alt="A contemporary abstract image featuring a golden infinity symbol composed of swirling stardust. The composition is off-center, creating a dynamic editorial feel. Soft, focused lighting illuminates the center of the symbol, set against a calm, textured paper-like background in ivory tones." src="/assets/6eb9eff3ca1a6ae37a18ad38382fce9d.png" />
+<span class="font-label-caps text-label-caps text-muted-gold text-[10px]">Life Path Number</span>
+<h4 class="font-headline-md text-body-lg mt-2">Life Path Number 22: Numerology, Meaning, and Compatibility</h4>
+</div>
+<!-- Tarot Card -->
+<div class="md:col-span-1 bg-surface-container-lowest border border-on-surface/10 p-6 flex flex-col group cursor-pointer">
+<img alt="The Magician" class="w-full aspect-square object-cover mb-4 grayscale hover:grayscale-0 transition-all" data-alt="A high-fashion, editorial-style photography of a single tarot card, 'The Magician', resting on a mirrored surface. The card's artwork features modern line art and muted gold accents. The reflection creates a sense of depth and mystery, while sharp, clean lighting emphasizes the premium quality and mystical subject matter." src="/assets/4471d337efda86bcaca30b3fc4da6cb9.png" />
+<span class="font-label-caps text-label-caps text-muted-gold text-[10px]">Tarot</span>
+<h4 class="font-headline-md text-body-lg mt-2">The Magician Tarot Card Meaning and Keywords</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Zodiac Signs Grid -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16">
+<p class="font-label-caps text-label-caps text-muted-gold mb-2 uppercase">Astrology</p>
+<h2 class="font-headline-lg text-headline-lg">Zodiac Signs</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<!-- Western Zodiac -->
+<div>
+<div class="text-center mb-10 border-b border-muted-gold/20 pb-8">
+<img alt="Western Zodiac" class="w-48 h-48 mx-auto object-cover rounded-full mb-6" data-alt="A beautiful, high-key digital art piece featuring a feminine celestial figure draped in stars, representing the universal energy of the Western Zodiac. The style is soft, ethereal, and airy, with subtle gold glows and a minimalist white background. The mood is serene, feminine, and profoundly wise." src="/assets/cbb21ec26063cb1b31b702f0bd66ddd9.png" />
+<h3 class="font-headline-md text-headline-md">12 Zodiac Signs</h3>
+<p class="text-on-surface-variant text-meta-sm">Dates, Meanings, Calculator and Compatibility</p>
+</div>
+<div class="grid grid-cols-4 gap-6">
+<!-- Sign Items -->
+<a class="group text-center" href="#">
+<span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+<p class="font-label-caps text-label-caps text-[10px]">Aries</p>
+<p class="text-[8px] text-on-surface-variant opacity-50">Mar 21 - Apr 19</p>
+</a>
+<a class="group text-center" href="#">
+<span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+<p class="font-label-caps text-label-caps text-[10px]">Taurus</p>
+<p class="text-[8px] text-on-surface-variant opacity-50">Apr 20 - May 20</p>
+</a>
+<a class="group text-center" href="#">
+<span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+<p class="font-label-caps text-label-caps text-[10px]">Gemini</p>
+<p class="text-[8px] text-on-surface-variant opacity-50">May 21 - Jun 20</p>
+</a>
+<a class="group text-center" href="#">
+<span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+<p class="font-label-caps text-label-caps text-[10px]">Cancer</p>
+<p class="text-[8px] text-on-surface-variant opacity-50">Jun 21 - Jul 22</p>
+</a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Leo</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Virgo</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Libra</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Scorpio</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Sagittarius</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Capricorn</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Aquarius</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Pisces</p></a>
+</div>
+</div>
+<!-- Chinese Zodiac -->
+<div>
+<div class="text-center mb-10 border-b border-muted-gold/20 pb-8">
+<img alt="Chinese Zodiac" class="w-48 h-48 mx-auto object-cover rounded-full mb-6" data-alt="A stylized, modern gold-ink illustration of a mythical celestial rabbit, representing the Chinese Zodiac. The artwork features sharp, clean lines and intricate patterns against a minimalist cream background. The mood is regal and culturally rich, executed with a high-end editorial design sensibility." src="/assets/7edf6389ba00fb740ba7c099a852d126.png" />
+<h3 class="font-headline-md text-headline-md">Chinese Zodiac</h3>
+<p class="text-on-surface-variant text-meta-sm">12 Zodiac Signs, Calculator and Compatibility</p>
+</div>
+<div class="grid grid-cols-4 gap-y-10 gap-x-6">
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">mouse</span><p class="font-label-caps text-label-caps text-[10px]">Rat</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">bedroom_parent</span><p class="font-label-caps text-label-caps text-[10px]">Ox</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">cruelty_free</span><p class="font-label-caps text-label-caps text-[10px]">Tiger</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">pets</span><p class="font-label-caps text-label-caps text-[10px]">Rabbit</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">eco</span><p class="font-label-caps text-label-caps text-[10px]">Dragon</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">waves</span><p class="font-label-caps text-label-caps text-[10px]">Snake</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">directions_run</span><p class="font-label-caps text-label-caps text-[10px]">Horse</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">landscape</span><p class="font-label-caps text-label-caps text-[10px]">Goat</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">psychology</span><p class="font-label-caps text-label-caps text-[10px]">Monkey</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">egg</span><p class="font-label-caps text-label-caps text-[10px]">Rooster</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">home_health</span><p class="font-label-caps text-label-caps text-[10px]">Dog</p></a>
+<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">savings</span><p class="font-label-caps text-label-caps text-[10px]">Pig</p></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Life Path Numerology -->
+<section class="py-section-gap bg-surface-container">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16">
+<p class="font-label-caps text-label-caps text-muted-gold mb-2">NUMEROLOGY</p>
+<h2 class="font-headline-lg text-headline-lg">What's in a Number?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+<div class="bg-surface p-8 border border-on-surface/5 flex flex-col items-center text-center">
+<img alt="Master Numbers" class="w-full aspect-square object-cover mb-6 grayscale" data-alt="A modern geometric arrangement of the numbers 11, 22, and 33 rendered in glowing white light on a dark charcoal background. The composition follows high-end editorial design rules with vast negative space and precise typography, evoking a sense of divine order and mathematical perfection." src="/assets/59f9897e3e5e158e61a0a36ea58b36f8.png" />
+<span class="font-label-caps text-[10px] text-muted-gold">Master Numbers</span>
+<h3 class="font-headline-md text-body-lg mt-4">Meaning of 11, 22, and 33</h3>
+</div>
+<div class="bg-surface p-8 border border-on-surface/5 flex flex-col items-center text-center">
+<img alt="Destiny Number" class="w-full aspect-square object-cover mb-6" data-alt="A striking minimalist graphic of a human silhouette filled with a star-filled nebula. Surrounding the figure are delicate golden numbers that seem to emanate from within. The overall aesthetic is ethereal and sophisticated, representing the concept of an inner destiny hidden within the human spirit." src="/assets/d960b63d2f463aae5e65b478232fef85.png" />
+<span class="font-label-caps text-[10px] text-muted-gold">Destiny Number</span>
+<h3 class="font-headline-md text-body-lg mt-4">Calculator and Expression</h3>
+</div>
+<div class="bg-surface p-8 border border-on-surface/5 flex flex-col items-center text-center">
+<img alt="Name Numerology" class="w-full aspect-square object-cover mb-6 grayscale" data-alt="A close-up shot of a vintage typewriter's keys, with several keys glowing with a soft, magical golden light. The letters are crisp and clear, symbolizing the power of names and words in numerology. The setting is a moody, antique-inspired library with deep charcoal shadows and high-key highlights." src="/assets/de2a9e8c6d836216280f76e110a7866f.png" />
+<span class="font-label-caps text-[10px] text-muted-gold">Name Numerology</span>
+<h3 class="font-headline-md text-body-lg mt-4">Calculator and Meanings</h3>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 md:p-16 rounded-xl flex flex-col md:flex-row gap-16 items-center">
+<div class="flex-1 w-full">
+<h2 class="font-headline-lg text-headline-lg mb-8">Find your life path number</h2>
+<div class="space-y-6">
+<div>
+<label class="font-label-caps text-label-caps block mb-2 opacity-60">MONTH</label>
+<select class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded focus:border-muted-gold focus:ring-0 appearance-none">
+<option>January</option><option>February</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div><label class="font-label-caps text-label-caps block mb-2 opacity-60">DAY</label><select class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded appearance-none"><option>22</option></select></div>
+<div><label class="font-label-caps text-label-caps block mb-2 opacity-60">YEAR</label><select class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded appearance-none"><option>1990</option></select></div>
+</div>
+<button class="w-full bg-primary-container text-white py-4 font-label-caps text-label-caps tracking-widest hover:bg-charcoal-text transition-all mt-4">REVEAL MY PATH</button>
+</div>
+</div>
+<div class="flex-1 flex justify-center">
+<div class="relative w-80 h-80 border-2 border-muted-gold/20 rounded-full flex items-center justify-center p-4">
+<div class="absolute inset-0 border border-muted-gold/10 rounded-full m-4 celestial-rotate" />
+<div class="text-center">
+<span class="font-display-lg text-display-lg text-muted-gold">?</span>
+<p class="font-label-caps text-label-caps text-on-surface-variant">YOUR NUMBER</p>
+</div>
+<!-- Small floating numbers around -->
+<span class="absolute top-10 left-10 font-headline-md text-muted-gold/30">11</span>
+<span class="absolute bottom-10 right-10 font-headline-md text-muted-gold/30">22</span>
+<span class="absolute top-1/2 -right-4 font-headline-md text-muted-gold/30">33</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Angel Numbers -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col lg:flex-row gap-16">
+<div class="lg:w-2/5">
+<p class="font-label-caps text-label-caps text-muted-gold mb-2 uppercase">Divine Guidance</p>
+<h2 class="font-headline-lg text-headline-lg mb-8">Angel Numbers</h2>
+<img alt="Angel Wings" class="w-full h-[500px] object-cover rounded-lg shadow-sm mb-8" data-alt="A breathtaking, high-fashion editorial photograph of translucent, ethereal angel wings made of pure light and fine crystal particles. The subject is set against a serene, high-key white background, creating a feeling of absolute purity and divine presence. The lighting is soft and radiant, with subtle rainbow prismatic effects at the edges of the light." src="/assets/2083515072a46a6103bf74173386cd69.png" />
+<h3 class="font-headline-md text-headline-md mb-4">What are They? Meaning and Significance</h3>
+<p class="text-on-surface-variant mb-6">Discover the hidden messages from the universe through repeating number sequences.</p>
+<p class="font-meta-sm text-meta-sm text-on-surface-variant">By Raphael Wilson</p>
+</div>
+<div class="lg:w-3/5 grid grid-cols-2 md:grid-cols-2 gap-4">
+<div class="group bg-surface-container-low p-6 rounded-lg border border-on-surface/5 flex items-center gap-6 cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center font-headline-md text-muted-gold shadow-sm group-hover:scale-110 transition-transform">000</div>
+<div>
+<p class="font-label-caps text-[10px] text-muted-gold">ANGEL NUMBER</p>
+<h4 class="font-headline-md text-body-lg">New Beginnings</h4>
+</div>
+</div>
+<div class="group bg-surface-container-low p-6 rounded-lg border border-on-surface/5 flex items-center gap-6 cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center font-headline-md text-muted-gold shadow-sm group-hover:scale-110 transition-transform">111</div>
+<div>
+<p class="font-label-caps text-[10px] text-muted-gold">ANGEL NUMBER</p>
+<h4 class="font-headline-md text-body-lg">Truth and Unity</h4>
+</div>
+</div>
+<div class="group bg-surface-container-low p-6 rounded-lg border border-on-surface/5 flex items-center gap-6 cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center font-headline-md text-muted-gold shadow-sm group-hover:scale-110 transition-transform">222</div>
+<div>
+<p class="font-label-caps text-[10px] text-muted-gold">ANGEL NUMBER</p>
+<h4 class="font-headline-md text-body-lg">Partnerships</h4>
+</div>
+</div>
+<div class="group bg-surface-container-low p-6 rounded-lg border border-on-surface/5 flex items-center gap-6 cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center font-headline-md text-muted-gold shadow-sm group-hover:scale-110 transition-transform">333</div>
+<div>
+<p class="font-label-caps text-[10px] text-muted-gold">ANGEL NUMBER</p>
+<h4 class="font-headline-md text-body-lg">Creativity and Joy</h4>
+</div>
+</div>
+<div class="group bg-surface-container-low p-6 rounded-lg border border-on-surface/5 flex items-center gap-6 cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center font-headline-md text-muted-gold shadow-sm group-hover:scale-110 transition-transform">444</div>
+<div><p class="font-label-caps text-[10px] text-muted-gold">ANGEL NUMBER</p><h4 class="font-headline-md text-body-lg">Discipline</h4></div>
+</div>
+<div class="group bg-surface-container-low p-6 rounded-lg border border-on-surface/5 flex items-center gap-6 cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center font-headline-md text-muted-gold shadow-sm group-hover:scale-110 transition-transform">555</div>
+<div><p class="font-label-caps text-[10px] text-muted-gold">ANGEL NUMBER</p><h4 class="font-headline-md text-body-lg">New Experiences</h4></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tarot Cards Fan -->
+<section class="py-section-gap bg-primary text-white overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center">
+<p class="font-label-caps text-label-caps text-muted-gold mb-2 uppercase">Divination</p>
+<h2 class="font-headline-lg text-headline-lg mb-20">Explore the Tarot</h2>
+<div class="tarot-fan-container relative h-[400px] mb-24 flex justify-center items-end">
+<!-- Fan of cards -->
+<div class="flex items-end justify-center -space-x-12">
+<div class="tarot-card bg-ivory-base w-32 h-52 rounded-lg border border-muted-gold/50 shadow-xl origin-bottom" style="transform: rotate(-30deg)" />
+<div class="tarot-card bg-ivory-base w-32 h-52 rounded-lg border border-muted-gold/50 shadow-xl origin-bottom" style="transform: rotate(-20deg)" />
+<div class="tarot-card bg-ivory-base w-32 h-52 rounded-lg border border-muted-gold/50 shadow-xl origin-bottom" style="transform: rotate(-10deg)" />
+<div class="tarot-card bg-ivory-base w-32 h-52 rounded-lg border border-muted-gold/50 shadow-xl origin-bottom z-10" style="transform: rotate(0deg)">
+<div class="w-full h-full p-2 flex flex-col items-center justify-between">
+<span class="font-label-caps text-[8px] text-charcoal-text uppercase">The Fool</span>
+<img alt="The Fool Tarot" class="w-full h-3/5 object-cover grayscale opacity-80" src="/assets/0f7e5df339d3e6e1ba8a5a850a44245b.png" />
+<span class="font-label-caps text-[8px] text-charcoal-text uppercase">0</span>
+</div>
+</div>
+<div class="tarot-card bg-ivory-base w-32 h-52 rounded-lg border border-muted-gold/50 shadow-xl origin-bottom" style="transform: rotate(10deg)" />
+<div class="tarot-card bg-ivory-base w-32 h-52 rounded-lg border border-muted-gold/50 shadow-xl origin-bottom" style="transform: rotate(20deg)" />
+<div class="tarot-card bg-ivory-base w-32 h-52 rounded-lg border border-muted-gold/50 shadow-xl origin-bottom" style="transform: rotate(30deg)" />
+</div>
+</div>
+<a class="inline-block border border-muted-gold text-muted-gold px-10 py-3 font-label-caps text-label-caps tracking-widest hover:bg-muted-gold hover:text-white transition-all mb-32" href="#">ALL MAJOR ARCANA →</a>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="p-8 border border-white/10 flex flex-col items-center gap-4 hover:bg-white/5 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-muted-gold text-5xl">magic_button</span>
+<h4 class="font-headline-md text-body-lg">Suit of Wands</h4>
+<p class="font-meta-sm text-meta-sm text-white/50">View Meaning</p>
+</div>
+<div class="p-8 border border-white/10 flex flex-col items-center gap-4 hover:bg-white/5 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-muted-gold text-5xl">wine_bar</span>
+<h4 class="font-headline-md text-body-lg">Suit of Cups</h4>
+<p class="font-meta-sm text-meta-sm text-white/50">View Meaning</p>
+</div>
+<div class="p-8 border border-white/10 flex flex-col items-center gap-4 hover:bg-white/5 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-muted-gold text-5xl">swords</span>
+<h4 class="font-headline-md text-body-lg">Suit of Swords</h4>
+<p class="font-meta-sm text-meta-sm text-white/50">View Meaning</p>
+</div>
+<div class="p-8 border border-white/10 flex flex-col items-center gap-4 hover:bg-white/5 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-muted-gold text-5xl">stars</span>
+</div></div></div></section></main></body></html>
