@@ -743,11 +743,10 @@
                         ayanamsa: 1
                     };
 
-                    fetch("https://json.freeastrologyapi.com/planets", {
+                    fetch("/api/planets", {
                         method: "POST",
                         headers: {
-                            "Content-Type": "application/json",
-                            "x-api-key": "4aa8230c71f86fdc80d2523daaad5d4884aeb280b5fc57dbc48faa542d86e06"
+                            "Content-Type": "application/json"
                         },
                         body: JSON.stringify(payload)
                     })
