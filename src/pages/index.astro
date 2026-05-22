@@ -142,7 +142,6 @@
 <a class="text-charcoal-text/80 font-label-caps text-label-caps hover:text-muted-gold transition-colors duration-300" href="#">Numerology</a>
 <a class="text-charcoal-text/80 font-label-caps text-label-caps hover:text-muted-gold transition-colors duration-300" href="#">Tarot</a>
 <a class="text-charcoal-text/80 font-label-caps text-label-caps hover:text-muted-gold transition-colors duration-300" href="#">Angel Numbers</a>
-<a class="text-charcoal-text/80 font-label-caps text-label-caps hover:text-muted-gold transition-colors duration-300" href="#">Chinese Zodiac</a>
 </nav>
 </div>
 <div class="flex items-center gap-6">
@@ -173,25 +172,25 @@
 <div class="space-y-6">
 <div>
 <label class="font-label-caps text-label-caps block mb-2 opacity-60">MONTH</label>
-<select class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded focus:border-muted-gold focus:ring-0 appearance-none">
+<select id="zodiac-month" class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded focus:border-muted-gold focus:ring-0 appearance-none">
 <option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option>
 </select>
 </div>
 <div class="grid grid-cols-2 gap-4">
 <div>
 <label class="font-label-caps text-label-caps block mb-2 opacity-60">DAY</label>
-<select class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded focus:border-muted-gold focus:ring-0 appearance-none">
+<select id="zodiac-day" class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded focus:border-muted-gold focus:ring-0 appearance-none">
 <option>1</option><option>2</option><option>3</option>
 </select>
 </div>
 <div>
 <label class="font-label-caps text-label-caps block mb-2 opacity-60">YEAR</label>
-<select class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded focus:border-muted-gold focus:ring-0 appearance-none">
+<select id="zodiac-year" class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded focus:border-muted-gold focus:ring-0 appearance-none">
 <option>2024</option><option>1995</option><option>1988</option>
 </select>
 </div>
 </div>
-<button class="w-full bg-primary-container text-white py-4 font-label-caps text-label-caps tracking-widest hover:bg-charcoal-text transition-all mt-4">REVEAL MY SIGN</button>
+<button id="zodiac-reveal-btn" class="w-full bg-primary-container text-white py-4 font-label-caps text-label-caps tracking-widest hover:bg-charcoal-text transition-all mt-4">REVEAL MY SIGN</button>
 </div>
 </div>
 <div class="flex flex-col justify-center items-center w-full">
@@ -288,7 +287,7 @@
 <p class="font-label-caps text-label-caps text-muted-gold mb-2 uppercase">Astrology</p>
 <h2 class="font-headline-lg text-headline-lg">Zodiac Signs</h2>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div class="max-w-4xl mx-auto">
 <!-- Western Zodiac -->
 <div>
 <div class="text-center mb-10 border-b border-muted-gold/20 pb-8">
@@ -318,37 +317,46 @@
 <p class="font-label-caps text-label-caps text-[10px]">Cancer</p>
 <p class="text-[8px] text-on-surface-variant opacity-50">Jun 21 - Jul 22</p>
 </a>
-<!-- ... (truncated for brevity but logic applies) -->
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Leo</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Virgo</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Libra</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Scorpio</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Sagittarius</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Capricorn</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Aquarius</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">article</span><p class="font-label-caps text-label-caps text-[10px]">Pisces</p></a>
-</div>
-</div>
-<!-- Chinese Zodiac -->
-<div>
-<div class="text-center mb-10 border-b border-muted-gold/20 pb-8">
-<img alt="Chinese Zodiac" class="w-48 h-48 mx-auto object-cover rounded-full mb-6" data-alt="A stylized, modern gold-ink illustration of a mythical celestial rabbit, representing the Chinese Zodiac. The artwork features sharp, clean lines and intricate patterns against a minimalist cream background. The mood is regal and culturally rich, executed with a high-end editorial design sensibility." src="/assets/7edf6389ba00fb740ba7c099a852d126.png" />
-<h3 class="font-headline-md text-headline-md">Chinese Zodiac</h3>
-<p class="text-on-surface-variant text-meta-sm">12 Zodiac Signs, Calculator and Compatibility</p>
-</div>
-<div class="grid grid-cols-4 gap-6">
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">mouse</span><p class="font-label-caps text-label-caps text-[10px]">Rat</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">bedroom_parent</span><p class="font-label-caps text-label-caps text-[10px]">Ox</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">cruelty_free</span><p class="font-label-caps text-label-caps text-[10px]">Tiger</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">pets</span><p class="font-label-caps text-label-caps text-[10px]">Rabbit</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">eco</span><p class="font-label-caps text-label-caps text-[10px]">Dragon</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">waves</span><p class="font-label-caps text-label-caps text-[10px]">Snake</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">directions_run</span><p class="font-label-caps text-label-caps text-[10px]">Horse</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">landscape</span><p class="font-label-caps text-label-caps text-[10px]">Goat</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">fitbit_climbing</span><p class="font-label-caps text-label-caps text-[10px]">Monkey</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">egg</span><p class="font-label-caps text-label-caps text-[10px]">Rooster</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">home_health</span><p class="font-label-caps text-label-caps text-[10px]">Dog</p></a>
-<a class="group text-center" href="#"><span class="material-symbols-outlined text-muted-gold text-4xl block mb-2">savings</span><p class="font-label-caps text-label-caps text-[10px]">Pig</p></a>
+<a class="group text-center" href="#">
+<span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+<p class="font-label-caps text-label-caps text-[10px]">Leo</p>
+<p class="text-[8px] text-on-surface-variant opacity-50">Jul 23 - Aug 22</p>
+</a>
+<a class="group text-center" href="#">
+<span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+<p class="font-label-caps text-label-caps text-[10px]">Virgo</p>
+<p class="text-[8px] text-on-surface-variant opacity-50">Aug 23 - Sep 22</p>
+</a>
+<a class="group text-center" href="#">
+<span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+<p class="font-label-caps text-label-caps text-[10px]">Libra</p>
+<p class="text-[8px] text-on-surface-variant opacity-50">Sep 23 - Oct 22</p>
+</a>
+<a class="group text-center" href="#">
+<span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+<p class="font-label-caps text-label-caps text-[10px]">Scorpio</p>
+<p class="text-[8px] text-on-surface-variant opacity-50">Oct 23 - Nov 21</p>
+</a>
+<a class="group text-center" href="#">
+<span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+<p class="font-label-caps text-label-caps text-[10px]">Sagittarius</p>
+<p class="text-[8px] text-on-surface-variant opacity-50">Nov 22 - Dec 21</p>
+</a>
+<a class="group text-center" href="#">
+<span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+<p class="font-label-caps text-label-caps text-[10px]">Capricorn</p>
+<p class="text-[8px] text-on-surface-variant opacity-50">Dec 22 - Jan 19</p>
+</a>
+<a class="group text-center" href="#">
+<span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+<p class="font-label-caps text-label-caps text-[10px]">Aquarius</p>
+<p class="text-[8px] text-on-surface-variant opacity-50">Jan 20 - Feb 18</p>
+</a>
+<a class="group text-center" href="#">
+<span class="material-symbols-outlined text-muted-gold text-4xl block mb-2 group-hover:scale-110 transition-transform">article</span>
+<p class="font-label-caps text-label-caps text-[10px]">Pisces</p>
+<p class="text-[8px] text-on-surface-variant opacity-50">Feb 19 - Mar 20</p>
+</a>
 </div>
 </div>
 </div>
@@ -383,23 +391,23 @@
 <div class="space-y-6">
 <div>
 <label class="font-label-caps text-label-caps block mb-2 opacity-60">MONTH</label>
-<select class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded focus:border-muted-gold focus:ring-0 appearance-none">
+<select id="lifepath-month" class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded focus:border-muted-gold focus:ring-0 appearance-none">
 <option>January</option><option>February</option>
 </select>
 </div>
 <div class="grid grid-cols-2 gap-4">
-<div><label class="font-label-caps text-label-caps block mb-2 opacity-60">DAY</label><select class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded appearance-none"><option>22</option></select></div>
-<div><label class="font-label-caps text-label-caps block mb-2 opacity-60">YEAR</label><select class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded appearance-none"><option>1990</option></select></div>
+<div><label class="font-label-caps text-label-caps block mb-2 opacity-60">DAY</label><select id="lifepath-day" class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded appearance-none"><option>22</option></select></div>
+<div><label class="font-label-caps text-label-caps block mb-2 opacity-60">YEAR</label><select id="lifepath-year" class="w-full bg-ivory-base border border-charcoal-text/20 p-4 rounded appearance-none"><option>1990</option></select></div>
 </div>
-<button class="w-full bg-primary-container text-white py-4 font-label-caps text-label-caps tracking-widest hover:bg-charcoal-text transition-all mt-4">REVEAL MY PATH</button>
+<button id="lifepath-reveal-btn" class="w-full bg-primary-container text-white py-4 font-label-caps text-label-caps tracking-widest hover:bg-charcoal-text transition-all mt-4">REVEAL MY PATH</button>
 </div>
 </div>
 <div class="flex-1 flex justify-center">
 <div class="relative w-80 h-80 border-2 border-muted-gold/20 rounded-full flex items-center justify-center p-4">
 <div class="absolute inset-0 border border-muted-gold/10 rounded-full m-4 celestial-rotate" />
 <div class="text-center">
-<span class="font-display-lg text-display-lg text-muted-gold">?</span>
-<p class="font-label-caps text-label-caps text-on-surface-variant">YOUR NUMBER</p>
+<span id="lifepath-result-num" class="font-display-lg text-display-lg text-muted-gold">?</span>
+<p id="lifepath-result-label" class="font-label-caps text-label-caps text-on-surface-variant">YOUR NUMBER</p>
 </div>
 <!-- Small floating numbers around -->
 <span class="absolute top-10 left-10 font-headline-md text-muted-gold/30">11</span>
@@ -597,64 +605,61 @@
 </div>
 </footer>
 <script>
-        // --- 1. Dynamic Dropdown Population ---
+    document.addEventListener("DOMContentLoaded", () => {
         const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        
-        let zodiacSelects = [];
-        let lifePathSelects = [];
-        let zodiacH2 = null;
-        let lifePathH2 = null;
 
-        document.querySelectorAll('h2').forEach(h2 => {
-            if (h2.innerText.toLowerCase().includes('zodiac sign')) {
-                zodiacH2 = h2;
-                zodiacSelects = h2.parentElement.querySelectorAll('select');
-            }
-            if (h2.innerText.toLowerCase().includes('life path')) {
-                lifePathH2 = h2;
-                lifePathSelects = h2.parentElement.querySelectorAll('select');
-            }
-        });
+        // 1. DOM Elements via IDs
+        const zodiacMonth = document.getElementById("zodiac-month");
+        const zodiacDay = document.getElementById("zodiac-day");
+        const zodiacYear = document.getElementById("zodiac-year");
+        const zodiacBtn = document.getElementById("zodiac-reveal-btn");
 
-        // Populate Zodiac Day/Year
-        if (zodiacSelects.length >= 3) {
-            const daySelect = zodiacSelects[1];
-            const yearSelect = zodiacSelects[2];
-            
-            daySelect.innerHTML = "";
+        const lifepathMonth = document.getElementById("lifepath-month");
+        const lifepathDay = document.getElementById("lifepath-day");
+        const lifepathYear = document.getElementById("lifepath-year");
+        const lifepathBtn = document.getElementById("lifepath-reveal-btn");
+        const lifepathResultNum = document.getElementById("lifepath-result-num");
+        const lifepathResultLabel = document.getElementById("lifepath-result-label");
+
+        // 2. Populate Zodiac Dropdowns
+        if (zodiacMonth && zodiacDay && zodiacYear) {
+            zodiacMonth.innerHTML = "";
+            months.forEach(m => zodiacMonth.appendChild(new Option(m, m)));
+            zodiacMonth.value = "November";
+
+            zodiacDay.innerHTML = "";
             for (let i = 1; i <= 31; i++) {
-                daySelect.appendChild(new Option(i.toString(), i.toString()));
+                zodiacDay.appendChild(new Option(i.toString(), i.toString()));
             }
-            
-            yearSelect.innerHTML = "";
+            zodiacDay.value = "22";
+
+            zodiacYear.innerHTML = "";
             for (let y = 2026; y >= 1940; y--) {
-                yearSelect.appendChild(new Option(y.toString(), y.toString()));
+                zodiacYear.appendChild(new Option(y.toString(), y.toString()));
             }
+            zodiacYear.value = "1990";
         }
 
-        // Populate Life Path Month/Day/Year
-        if (lifePathSelects.length >= 3) {
-            const monthSelect = lifePathSelects[0];
-            const daySelect = lifePathSelects[1];
-            const yearSelect = lifePathSelects[2];
+        // 3. Populate Life Path Dropdowns
+        if (lifepathMonth && lifepathDay && lifepathYear) {
+            lifepathMonth.innerHTML = "";
+            months.forEach(m => lifepathMonth.appendChild(new Option(m, m)));
+            lifepathMonth.value = "May";
 
-            monthSelect.innerHTML = "";
-            months.forEach(m => {
-                monthSelect.appendChild(new Option(m, m));
-            });
-
-            daySelect.innerHTML = "";
+            lifepathDay.innerHTML = "";
             for (let i = 1; i <= 31; i++) {
-                daySelect.appendChild(new Option(i.toString(), i.toString()));
+                lifepathDay.appendChild(new Option(i.toString(), i.toString()));
             }
+            lifepathDay.value = "22";
 
-            yearSelect.innerHTML = "";
+            lifepathYear.innerHTML = "";
             for (let y = 2026; y >= 1940; y--) {
-                yearSelect.appendChild(new Option(y.toString(), y.toString()));
+                lifepathYear.appendChild(new Option(y.toString(), y.toString()));
             }
+            lifepathYear.value = "1990";
         }
 
-        // --- 2. Zodiac Calculator Logic ---
+        // 4. Zodiac Calculator Logic
         function getZodiacSign(month, day) {
             const monthLower = month.toLowerCase();
             if ((monthLower === "march" && day >= 21) || (monthLower === "april" && day <= 19)) return "Aries";
@@ -681,121 +686,110 @@
             "Saturn": "♄"
         };
 
-        // Wire up Zodiac click (Fully connected to FreeAstroAPI!)
-        document.querySelectorAll('button').forEach(btn => {
-            if (btn.innerText.includes('REVEAL MY SIGN')) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    if (zodiacSelects.length >= 3) {
-                        const m = zodiacSelects[0].value;
-                        const d = parseInt(zodiacSelects[1].value);
-                        const y = parseInt(zodiacSelects[2].value);
-                        const sign = getZodiacSign(m, d);
+        if (zodiacBtn) {
+            zodiacBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const m = zodiacMonth.value;
+                const d = parseInt(zodiacDay.value);
+                const y = parseInt(zodiacYear.value);
+                const sign = getZodiacSign(m, d);
 
-                        // Rotate the Wheel
-                        const wheel = btn.closest('section').querySelector('.celestial-rotate');
-                        if (wheel) {
-                            wheel.style.transition = 'transform 3.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
-                            wheel.style.transform = 'rotate(1440deg)';
-                        }
+                // Rotate the Wheel
+                const wheel = document.querySelector('.celestial-rotate');
+                if (wheel) {
+                    wheel.style.transition = 'transform 3.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                    wheel.style.transform = 'rotate(1440deg)';
+                }
 
-                        // Display Result in center of wheel (Loading state first, then sign)
-                        const textCenter = btn.closest('section').querySelector('.font-display-lg.text-display-lg.text-muted-gold');
-                        if (textCenter) {
-                            textCenter.style.opacity = '0';
-                            setTimeout(() => {
-                                textCenter.innerText = "ALIGNING";
-                                textCenter.className = "font-label-caps text-label-caps text-muted-gold animate-pulse tracking-widest scale-100 duration-500 transition-all";
-                                textCenter.style.opacity = '1';
-                            }, 500);
+                // Display Result in center of wheel
+                const textCenter = document.querySelector('.font-display-lg.text-display-lg.text-muted-gold');
+                if (textCenter) {
+                    textCenter.style.opacity = '0';
+                    setTimeout(() => {
+                        textCenter.innerText = "ALIGNING";
+                        textCenter.className = "font-label-caps text-label-caps text-muted-gold animate-pulse tracking-widest scale-100 duration-500 transition-all";
+                        textCenter.style.opacity = '1';
+                    }, 500);
 
-                            setTimeout(() => {
-                                textCenter.innerText = sign;
-                                textCenter.className = "font-headline-md text-headline-md text-muted-gold tracking-widest uppercase scale-110 duration-500 transition-all";
-                                textCenter.style.opacity = '1';
-                            }, 2500);
-                        }
+                    setTimeout(() => {
+                        textCenter.innerText = sign;
+                        textCenter.className = "font-headline-md text-headline-md text-muted-gold tracking-widest uppercase scale-110 duration-500 transition-all";
+                        textCenter.style.opacity = '1';
+                    }, 2500);
+                }
 
-                        // Call FreeAstroAPI live planets calculator!
-                        const mIndex = months.indexOf(m) + 1;
-                        const planetsContainer = document.getElementById("birth-planets-container");
-                        const planetsList = document.getElementById("planets-list");
+                // Call FreeAstroAPI live planets calculator
+                const mIndex = months.indexOf(m) + 1;
+                const planetsContainer = document.getElementById("birth-planets-container");
+                const planetsList = document.getElementById("planets-list");
 
-                        if (planetsContainer && planetsList) {
-                            planetsList.innerHTML = `<div class="col-span-2 text-center text-on-surface-variant/40 animate-pulse uppercase tracking-widest text-[10px]">Mapping celestial coordinates...</div>`;
-                            planetsContainer.classList.remove("hidden");
-                            setTimeout(() => {
-                                planetsContainer.style.opacity = "1";
-                                planetsContainer.style.transform = "scale(1)";
-                            }, 100);
+                if (planetsContainer && planetsList) {
+                    planetsList.innerHTML = `<div class="col-span-2 text-center text-on-surface-variant/40 animate-pulse uppercase tracking-widest text-[10px]">Mapping celestial coordinates...</div>`;
+                    planetsContainer.classList.remove("hidden");
+                    setTimeout(() => {
+                        planetsContainer.style.opacity = "1";
+                        planetsContainer.style.transform = "scale(1)";
+                    }, 100);
 
-                            // API POST payload
-                            const payload = {
-                                year: y || 1995,
-                                month: mIndex,
-                                day: d,
-                                hour: 12,
-                                min: 0,
-                                lat: 40.7128, // Default New York coordinates for chart sign calculation
-                                lon: -74.0060,
-                                tzone: -5,
-                                ayanamsa: 1
-                            };
+                    const payload = {
+                        year: y || 1990,
+                        month: mIndex,
+                        day: d,
+                        hour: 12,
+                        min: 0,
+                        lat: 40.7128,
+                        lon: -74.0060,
+                        tzone: -5,
+                        ayanamsa: 1
+                    };
 
-                            fetch("https://json.freeastrologyapi.com/planets", {
-                                method: "POST",
-                                headers: {
-                                    "Content-Type": "application/json",
-                                    "x-api-key": "4aa8230c71f86fdc80d2523daaad5d4884aeb280b5fc57dbc48faa542d86e06"
-                                },
-                                body: JSON.stringify(payload)
-                            })
-                            .then(res => {
-                                if (!res.ok) throw new Error("API rate-limited or unavailable");
-                                return res.json();
-                            })
-                            .then(data => {
-                                planetsList.innerHTML = "";
-                                
-                                // Extract calculations from array response
-                                const planetsArray = Array.isArray(data) ? data : (data.planets ? Object.values(data.planets) : []);
-                                
-                                if (planetsArray.length === 0) {
-                                    throw new Error("No data returned");
-                                }
+                    fetch("https://json.freeastrologyapi.com/planets", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "x-api-key": "4aa8230c71f86fdc80d2523daaad5d4884aeb280b5fc57dbc48faa542d86e06"
+                        },
+                        body: JSON.stringify(payload)
+                    })
+                    .then(res => {
+                        if (!res.ok) throw new Error("API rate-limited or offline");
+                        return res.json();
+                    })
+                    .then(data => {
+                        planetsList.innerHTML = "";
+                        const planetsArray = Array.isArray(data) ? data : (data.planets ? Object.values(data.planets) : []);
+                        
+                        if (planetsArray.length === 0) throw new Error("No data");
 
-                                planetsArray.forEach(p => {
-                                    const icon = planetIcons[p.name];
-                                    if (icon) {
-                                        const card = document.createElement("div");
-                                        card.className = "flex items-center gap-3 bg-surface-container-low/50 p-3 rounded-lg border border-on-surface/5";
-                                        card.innerHTML = `
-                                            <span class="text-xl">${icon}</span>
-                                            <div>
-                                                <p class="text-[9px] uppercase tracking-wider opacity-50">${p.name}</p>
-                                                <p class="font-bold text-muted-gold">${p.sign}</p>
-                                            </div>
-                                        `;
-                                        planetsList.appendChild(card);
-                                    }
-                                });
-                            })
-                            .catch(err => {
-                                // Graceful local fallback if offline or API key runs out of daily credits
-                                planetsList.innerHTML = `
-                                    <div class="col-span-2 text-center bg-surface-container-low/40 p-4 border border-red-900/10 rounded">
-                                        <p class="text-[11px] text-muted-gold uppercase tracking-wider">Celestial Offline Mode Enabled</p>
-                                        <p class="text-[9px] text-on-surface-variant/60 mt-1">Sun calculated in ${sign}. Live alignments temporarily rate-limited.</p>
+                        planetsArray.forEach(p => {
+                            const icon = planetIcons[p.name];
+                            if (icon) {
+                                const card = document.createElement("div");
+                                card.className = "flex items-center gap-3 bg-surface-container-low/50 p-3 rounded-lg border border-on-surface/5";
+                                card.innerHTML = `
+                                    <span class="text-xl">${icon}</span>
+                                    <div>
+                                        <p class="text-[9px] uppercase tracking-wider opacity-50">${p.name}</p>
+                                        <p class="font-bold text-muted-gold">${p.sign}</p>
                                     </div>
                                 `;
-                            });
-                        }
-                    }
-                });
-            }
-        });
+                                planetsList.appendChild(card);
+                            }
+                        });
+                    })
+                    .catch(err => {
+                        planetsList.innerHTML = `
+                            <div class="col-span-2 text-center bg-surface-container-low/40 p-4 border border-red-900/10 rounded">
+                                <p class="text-[11px] text-muted-gold uppercase tracking-wider">Celestial Offline Mode Enabled</p>
+                                <p class="text-[9px] text-on-surface-variant/60 mt-1">Sun calculated in ${sign}. Live alignments temporarily rate-limited.</p>
+                            </div>
+                        `;
+                    });
+                }
+            });
+        }
 
-        // --- 3. Life Path Numerology Calculator ---
+        // 5. Life Path Numerology Calculator
         function reduceNum(n) {
             let sum = 0;
             while (n > 0 || sum > 9) {
@@ -810,20 +804,13 @@
         }
 
         function getLifePathNumber(monthName, day, year) {
-            // Month value
             const mIndex = months.indexOf(monthName) + 1;
             const monthVal = (mIndex === 11) ? 11 : reduceNum(mIndex);
-            
-            // Day value
             const dayVal = (day === 11 || day === 22) ? day : reduceNum(day);
-            
-            // Year value
             let yearVal = reduceNum(year);
 
             const total = monthVal + dayVal + yearVal;
-            if (total === 11 || total === 22 || total === 33) {
-                return total;
-            }
+            if (total === 11 || total === 22 || total === 33) return total;
             return reduceNum(total);
         }
 
@@ -842,39 +829,30 @@
             33: "The Master Teacher"
         };
 
-        // Wire up Life Path click
-        document.querySelectorAll('button').forEach(btn => {
-            if (btn.innerText.includes('REVEAL MY PATH')) {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    if (lifePathSelects.length >= 3) {
-                        const m = lifePathSelects[0].value;
-                        const d = parseInt(lifePathSelects[1].value);
-                        const y = parseInt(lifePathSelects[2].value);
-                        
-                        const pathNumber = getLifePathNumber(m, d, y);
-                        const archetype = archetypes[pathNumber] || "The Traveler";
+        if (lifepathBtn) {
+            lifepathBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const m = lifepathMonth.value;
+                const d = parseInt(lifepathDay.value);
+                const y = parseInt(lifepathYear.value);
+                const pathNumber = getLifePathNumber(m, d, y);
+                const archetype = archetypes[pathNumber] || "The Traveler";
 
-                        // Update Center Circle
-                        const circleNum = btn.closest('.bg-surface-container-low').nextElementSibling.querySelector('.font-display-lg');
-                        const circleLabel = btn.closest('.bg-surface-container-low').nextElementSibling.querySelector('.font-label-caps');
-                        
-                        if (circleNum) {
-                            circleNum.style.transition = 'transform 0.5s ease';
-                            circleNum.style.transform = 'scale(0)';
-                            setTimeout(() => {
-                                circleNum.innerText = pathNumber;
-                                circleNum.style.transform = 'scale(1.2)';
-                            }, 500);
-                        }
+                if (lifepathResultNum) {
+                    lifepathResultNum.style.transition = 'transform 0.5s ease';
+                    lifepathResultNum.style.transform = 'scale(0)';
+                    setTimeout(() => {
+                        lifepathResultNum.innerText = pathNumber;
+                        lifepathResultNum.style.transform = 'scale(1.2)';
+                    }, 500);
+                }
 
-                        if (circleLabel) {
-                            circleLabel.innerText = archetype;
-                            circleLabel.className = "font-label-caps text-label-caps text-muted-gold mt-2 block animate-pulse";
-                        }
-                    }
-                });
-            }
-        });
-    </script>
+                if (lifepathResultLabel) {
+                    lifepathResultLabel.innerText = archetype;
+                    lifepathResultLabel.className = "font-label-caps text-label-caps text-muted-gold mt-2 block animate-pulse";
+                }
+            });
+        }
+    });
+</script>
 </body></html>
